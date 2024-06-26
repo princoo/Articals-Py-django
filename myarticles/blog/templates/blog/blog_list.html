@@ -1,0 +1,12 @@
+{%extends 'base_layout.html'%}
+
+{%block content%}
+    <h1>List of Blogs</h1>
+    {%for blog in blogs %}
+    <div class="blog">
+        <h2><a href="{% url 'blogs:details' slug=blog.slug %}">{{blog.title}}</a></h2>
+        <p>{{blog.snippete}}</p>
+        <p>{{blog.date}}</p>
+    </div>
+    {%endfor%}
+{%endblock%}
